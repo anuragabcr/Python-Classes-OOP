@@ -47,11 +47,11 @@ class PdfReport:
         webbrowser.open(self.filename)
 
 
-bill = Bill(120, "March 2020")
-john = Flatmate(20, "john")
-marry = Flatmate(25, "Marry")
-print(john.pay(bill, marry))
-print(marry.pay(bill, john))
+bill = Bill(int(input('Enter the bill Amount: ')), input('Enter Period: '))
+flatmate1 = Flatmate(int(input('Enter No. of days stayed: ')), input('Enter flatmate name: '))
+flatmate2 = Flatmate(int(input('Enter No. of days stayed: ')), input('Enter flatmate name: '))
+print(flatmate1.pay(bill, flatmate2))
+print(flatmate2.pay(bill, flatmate1))
 
 report = PdfReport("report.pdf")
-report.generate(john, marry, bill)
+report.generate(flatmate1, flatmate2, bill)
